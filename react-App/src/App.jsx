@@ -1,56 +1,41 @@
-import * as React from 'react';
-const welcome={
-  greeting:"hey" ,
-  title : "react" ,
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
 
-};
-//function App(){
- // return(
- //   <div>
-  //    <h1>
-  //      {welcome.greeting} {welcome.title}
-//</h1>
- //     <label htmlFor="search">search:</label>
- //     <input id="search" type="text"></input>
- //   </div>
- // ) 
-//}
-//export default App;
-const list =[
-  {
-  title : "react",
-  url : "https://ut.uvt.tn/pluginfile.php/2292928/mod_resource/content/0/W3_Activity_React_List.pdf",
-  author: "Mayssam", 
-  objectId :4, 
-  num_comments :2, 
-  points :0,
-  },
-  {
-    title : "redux",
-    url : "https://ut.uvt.tn/pluginfile.php/2292928/mod_resource/content/0/W3_Activity_React_List.pdf",
-    author : "malek",
-    objectId :5,
-    num_comments :6,
-    points :3,
-  },
-]
-function App(){
+function App() {
+  const [count, setCount] = useState(0)
+
   return (
-    <div>
-      <h1>my hacker stories</h1>
-      <label htmlFor='search'>search:</label>
-      <input id="search" type="text" />
-      <hr/>
-     <ul>
-       {list.map(function(item){
-       return <li key={item.objectId}>{item.title}</li>;
-})}
-     </ul>
-</div>
-  );
-
+    <>
+      <div>
+        <a href="https://vitejs.dev" target="_blank">
+          <img src={viteLogo} className="logo" alt="Vite logo" />
+        </a>
+        <a href="https://react.dev" target="_blank">
+          <img src={reactLogo} className="logo react" alt="React logo" />
+        </a>
+      </div>
+      <h1>Vite + React</h1>
+      <div className="card">
+        <button onClick={() => setCount((count) => count + 1)}>
+          count is {count}
+        </button>
+        <p>
+          Edit <code>src/App.jsx</code> and save to test HMR
+        </p>
+      </div>
+      <p className="read-the-docs">
+        Click on the Vite and React logos to learn more
+      </p>
+    </>
+  )
 }
-export default App; 
+
+export default App
+
+
+
 
 
 
