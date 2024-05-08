@@ -343,7 +343,7 @@ const [searchTerm, setSearchTerm] = React.useState("");
       <List list={searchedStories} />
     </div>
   );
-};
+
 export default App;
 
 
